@@ -7,6 +7,7 @@ export const register = async (req: Request, res:Response): Promise<void> =>{
   const {email, password} = req.body
   if(!email || !password){
     res.status(400).json({error: 'Los campos de email y password son obligatorios' })
+    return
   }
   try {
     const hashedPassword = await hashPassword(password)
@@ -23,6 +24,7 @@ export const register = async (req: Request, res:Response): Promise<void> =>{
     if(error?.code === 'P2002'){
       res.status(409).json({error: `El email ya esta en uso`})
     }
+    console.error('Error en el registro:', error)
     res.status(500).json({error: 'hubo un error en el registro'})
   }
 }
