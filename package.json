@@ -8,7 +8,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "rimraf ./dist && tsc",
+    "build": "prisma generate && rimraf ./dist && tsc",
     "start": "node src/server.js"
   },
   "dependencies": {
