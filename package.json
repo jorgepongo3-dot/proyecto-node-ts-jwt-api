@@ -8,8 +8,8 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate && prisma migrate deploy && rimraf ./dist && tsc",
-    "start": "node dist/server.js"
+    "build": "prisma generate && rimraf ./dist && tsc",
+    "start": "prisma migrate deploy && node dist/server.js"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.6.0",
