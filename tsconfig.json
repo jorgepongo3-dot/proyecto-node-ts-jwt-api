@@ -1,0 +1,19 @@
+{
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"],
+  "compilerOptions": {
+    "target": "ES2022",                  // Versión moderna de JS
+    "module": "nodenext",                // Compatible con ESM y Node
+    "moduleResolution": "nodenext",      // Resolución de módulos ESM
+    "rootDir": "src",                     // Carpeta con TS
+    "outDir": "dist",                     // Carpeta compilada
+    "strict": true,
+    "esModuleInterop": true,              // Para compatibilidad con algunos paquetes
+    "forceConsistentCasingInFileNames": true, // Protege contra errores entre Windows/Linux.
+    "skipLibCheck": true,
+    // "declaration": true,                  // Genera archivos .d.ts solo sirve si publicas npm, en caso backend, api, sistema web, microservicio eliminalo
+    // "declarationMap": true, //esto solo sirve si usas "declaration"
+    "sourceMap": true,  //Sirve para debugging (muy útil en desarrollo).
+    // "isolatedModules": true   //Necesario solo si usas: Next.js Vite Babel SWC ts-node con ciertas configs
+  },
+}
